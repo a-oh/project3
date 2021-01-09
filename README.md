@@ -1,167 +1,54 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 3: Web APIs & NLP
+﻿
+## Background
 
-### Description
-
-In week four we've learned about a few different classifiers. In week five we'll learn about webscraping, APIs, and Natural Language Processing (NLP). This project will put those skills to the test.
-
-For project 3, your goal is two-fold:
-1. Using [Pushshift's](https://github.com/pushshift/api) API, you'll collect posts from two subreddits of your choosing.
-2. You'll then use NLP to train a classifier on which subreddit a given post came from. This is a binary classification problem.
+**Clickthrough rate (CTR):**
+![enter image description here](https://lh3.googleusercontent.com/7gaxt-yDvyXt7anwa8dvd2GJLOEHIda3iAfw1o4LTwZdixKrYoG4EQcIAtcAWtdkM-WG0Wh0S1__06jZnz88LO4fWBr5Gdx8RwT04POKLtw-1pk9cNCr7j7d8XiFL8l3dczAS3NNyTFrYtt1J4nwPcxX2qr_a0twYxaMfNeZ9VzxKIsOXp1Y-9tpZSXLVDjPmPWYav2qv62_GTdMEEuiCDLQIAR_2PHpelAIZB6Lo8r5dim8Vop7KGfIWiNwVk2QVTbqkEBKp-UpO7niXFP3hi1stSjx6OQ3bfPQk38Eb_ne4yQrbGIhUi2EmIPckwny112rt0UtCPIHsE4YUSzTqt7gUZo2eRU_Q8LBqNDcZ_llL7D78FPEXqaDKibinsHK72WmeTv0fnGWHFsFebKA_CSFhT05xTyK1YrhNYUChgvekrVMhpxR1xfvuFKGXeITj8uVx3sO7oQJqiE0attCMUtQR7zJWHrQEzcEz6XC7SZ-A5kQlULFisc41HsqMy8fhbzzsyNC1nIVQJXwQ-EkLofeGVkjeWm7oFVAI6mvezdhDQL8p6wVNpBuG4xZQz9HJCgEwEMA38IBIWyYpqx-cXhy3NokiBWSOqFJpAPEbL2ipw-4nsmN4vZcWgeXLFEoBZthMnWDtl_D5Rc9A4lpPjlBtiIw8C7DcmfqvJnRmu1gW4T9ZYNXC2lutb8m2Q=w658-h268-no?authuser=0)
+ - A ratio showing how often people who see your ad or product listing end up clicking it.
+ - Clickthrough rate (CTR) can be used to gauge how well your keywords and ads are performing.
 
 
-#### About the API
+## Introduction
 
-Pushshift's API is fairly straightforward. For example, if I want the posts from [`/r/boardgames`](https://www.reddit.com/r/boardgames), all I have to do is use the following url: https://api.pushshift.io/reddit/search/submission?subreddit=boardgames
-
-To help you get started, we have a primer video on how to use the API: https://youtu.be/AcrjEWsMi_E
-
----
-
-### Requirements
-
-- Gather and prepare your data using the `requests` library.
-- **Create and compare at least two models**. These can be any classifier of your choosing: logistic regression, Naive Bayes, KNN, SVM, Random Forest Classifier, etc.
-  - **Bonus**: use a Naive Bayes classifier
-- A Jupyter Notebook with your analysis for a peer audience of data scientists.
-- An executive summary of your results.
-- A short presentation outlining your process and findings for a semi-technical audience.
-
-**Pro Tip:** You can find a good example executive summary [here](https://www.proposify.biz/blog/executive-summary).
-
----
-
-### Necessary Deliverables / Submission
-
-- Code and executive summary must be in a clearly commented Jupyter Notebook.
-- You must submit your slide deck.
-- Materials must be submitted by **11:59 PM PST on Friday, January 8th 2021**.
-- Presentation must be ready by **09:00 AM PST on Friday, January 8th 2021**.
-
----
-
-## Rubric
-Your local instructor will evaluate your project (for the most part) using the following criteria.  You should make sure that you consider and/or follow most if not all of the considerations/recommendations outlined below **while** working through your project.
-
-For Project 3 the evaluation categories are as follows:<br>
-**The Data Science Process**
-- Problem Statement
-- Data Collection
-- Data Cleaning & EDA
-- Preprocessing & Modeling
-- Evaluation and Conceptual Understanding
-- Conclusion and Recommendations
-
-**Organization and Professionalism**
-- Organization
-- Visualizations
-- Python Syntax and Control Flow
-- Presentation
-
-**Scores will be out of 30 points based on the 10 categories in the rubric.** <br>
-*3 points per section*<br>
-
-| Score | Interpretation |
-| --- | --- |
-| **0** | *Project fails to meet the minimum requirements for this item.* |
-| **1** | *Project meets the minimum requirements for this item, but falls significantly short of portfolio-ready expectations.* |
-| **2** | *Project exceeds the minimum requirements for this item, but falls short of portfolio-ready expectations.* |
-| **3** | *Project meets or exceeds portfolio-ready expectations; demonstrates a thorough understanding of every outlined consideration.* |
+The term 'clickbait' describes **sensationalist** headlines used by news websites such as Buzzfeed as tactics to gain the maximum number of readers. Rather than delivering a news story that adheres to journalistic integrity, this type of reporting relies on emotionally charged terms and biased stance to provoke curiosity in readers to 'click' and learn more.
 
 
-### The Data Science Process
+However, despite the negative connotation of the term 'clickbait,' Clickthrough Rate (CTR) is a widely used metric for measuring the effectiveness of advertisement and marketing.  
 
-**Problem Statement**
-- Is it clear what the goal of the project is?
-- What type of model will be developed?
-- How will success be evaluated?
-- Is the scope of the project appropriate?
-- Is it clear who cares about this or why this is important to investigate?
-- Does the student consider the audience and the primary and secondary stakeholders?
-
-**Data Collection**
-- Was enough data gathered to generate a significant result?
-- Was data collected that was useful and relevant to the project?
-- Was data collection and storage optimized through custom functions, pipelines, and/or automation?
-- Was thought given to the server receiving the requests such as considering number of requests per second?
-
-**Data Cleaning and EDA**
-- Are missing values imputed/handled appropriately?
-- Are distributions examined and described?
-- Are outliers identified and addressed?
-- Are appropriate summary statistics provided?
-- Are steps taken during data cleaning and EDA framed appropriately?
-- Does the student address whether or not they are likely to be able to answer their problem statement with the provided data given what they've discovered during EDA?
-
-**Preprocessing and Modeling**
-- Is text data successfully converted to a matrix representation?
-- Are methods such as stop words, stemming, and lemmatization explored?
-- Does the student properly split and/or sample the data for validation/training purposes?
-- Does the student test and evaluate a variety of models to identify a production algorithm (**AT MINIMUM:** two classification models, **BONUS:** try a Naive Bayes)?
-- Does the student defend their choice of production model relevant to the data at hand and the problem?
-- Does the student explain how the model works and evaluate its performance successes/downfalls?
-
-**Evaluation and Conceptual Understanding**
-- Does the student accurately identify and explain the baseline score?
-- Does the student select and use metrics relevant to the problem objective?
-- Does the student interpret the results of their model for purposes of inference?
-- Is domain knowledge demonstrated when interpreting results?
-- Does the student provide appropriate interpretation with regards to descriptive and inferential statistics?
-
-**Conclusion and Recommendations**
-- Does the student provide appropriate context to connect individual steps back to the overall project?
-- Is it clear how the final recommendations were reached?
-- Are the conclusions/recommendations clearly stated?
-- Does the conclusion answer the original problem statement?
-- Does the student address how findings of this research can be applied for the benefit of stakeholders?
-- Are future steps to move the project forward identified?
+Here, I am using two subreddits r/UpliftingNews and r/NottheOnion, two very different types of news articles that gain popularity online, as case studies for investigating whether there are any distinctive characteristics in their titles that draw readers' attention by implementing NLP models.
 
 
-### Organization and Professionalism
+## Summary
 
-**Project Organization**
-- Are modules imported correctly (using appropriate aliases)?
-- Are data imported/saved using relative paths?
-- Does the README provide a good executive summary of the project?
-- Is markdown formatting used appropriately to structure notebooks?
-- Are there an appropriate amount of comments to support the code?
-- Are files & directories organized correctly?
-- Are there unnecessary files included?
-- Do files and directories have well-structured, appropriate, consistent names?
-
-**Visualizations**
-- Are sufficient visualizations provided?
-- Do plots accurately demonstrate valid relationships?
-- Are plots labeled properly?
-- Are plots interpreted appropriately?
-- Are plots formatted and scaled appropriately for inclusion in a notebook-based technical report?
-
-**Python Syntax and Control Flow**
-- Is care taken to write human readable code?
-- Is the code syntactically correct (no runtime errors)?
-- Does the code generate desired results (logically correct)?
-- Does the code follows general best practices and style guidelines?
-- Are Pandas functions used appropriately?
-- Are `sklearn` and `NLTK` methods used appropriately?
-
-**Presentation**
-- Is the problem statement clearly presented?
-- Does a strong narrative run through the presentation building toward a final conclusion?
-- Are the conclusions/recommendations clearly stated?
-- Is the level of technicality appropriate for the intended audience?
-- Is the student substantially over or under time?
-- Does the student appropriately pace their presentation?
-- Does the student deliver their message with clarity and volume?
-- Are appropriate visualizations generated for the intended audience?
-- Are visualizations necessary and useful for supporting conclusions/explaining findings?
+This notebook contains 3 sub-notebooks that details each step of the NLP modeling:
+- subreddit web scraping / EDA
+- preprocessing
+- NLP modeling using various transformer/estimater
 
 
----
 
-### Why did we choose this project for you?
-This project covers three of the biggest concepts we cover in the class: Classification Modeling, Natural Language Processing and Data Wrangling/Acquisition.
 
-Part 1 of the project focuses on **Data wrangling/gathering/acquisition**. This is a very important skill as not all the data you will need will be in clean CSVs or a single table in SQL.  There is a good chance that wherever you land you will have to gather some data from some unstructured/semi-structured sources; when possible, requesting information from an API, but often scraping it because they don't have an API (or it's terribly documented).
+**Number of Words Included in the Title**
+![enter image description here](https://lh3.googleusercontent.com/wAODvxz7BFG2rcezWXltBtPhXoVj3zTcIU2uKyT_E0ds88LXw3OijwUray6eqVY9YpaCVJbkH3fn6LCUNpgCIyNP7iOCpfDRBEj3QXw_XFPdtbu2VuUvl_oJ6ZcPCjoPG_fjrcFhoU0WgRfffctrc4-5lp2lJYl0_Xv_2quyusfM_Xv2qLY4f7vdobC8DWRS1QNpHNZ5m2J1FvOUzp0a7VAI-XnaVfqKZH2QhIxo2D7kj2IP2C8ZhhuO_mFKJrdmVl-vrZmJR5wHxKtTnjDf_ADFRX2Th890NkvYidahyZsElwih69qZll_1T495_H_4rCS6eyoa7tbcbfTwTpQwbAJGUzrH1GXMwvCPIhugFyaZS_6yzoFpscifCrU-UiEoRQGci7QhnKdH0LJOX2TTzkv1NxMqZ0XTFUKvOvVzG2XkidK-d4VXozdERgcy8ParNblj0_uDKKzR9dbQnp4xYqrXaXnfc-BOAN4csXA4-BOZliSXK-zDANa-k16qbRCmF7oO6gT-622DMONgiKbTZu7YEsQlNXu4bzvim5xp30mr3XJi7DAbF8rzmRjDTaAoieiOL5UIIE88jcxVPYR3E02NkcEG_S3PF4Um_Gegp5eJMF5Qu9bfKiPD_gMrw_3gXMVAHQss7aK76vdzV8GsZeDaiz6lWSaxVOyTR0y5PrjWcD15pML-z54pxVXJdg=w1017-h470-no?authuser=0)
 
-Part 2 of the project focuses on **Natural Language Processing** and converting standard text data (like Titles and Comments) into a format that allows us to analyze it and use it in modeling.
+**Most Frequently Appearing Unique Words from Each Subreddit**
+![enter image description here](https://lh3.googleusercontent.com/e8donGKgNAUu4Qli7PfJqpyAJUzR9W2-7wJVOmQqVuUEcoHaUxBk08Gt77fqgJiGdZD8U3zOBeKUCQZ7kzZNBkfbUncqgfU2BpPvOrIiOEFUhnk_8J4X0taVDAO_2GgajxC8AXVW1hrxvMi5HhhHwIJnIwpASDS6LAzWZ2_Y2_6WKPzzfqRL6tR_ZLtQoJbIpxKf5OvBOtsyKYnjEBCyfD1dWGZiNAostp_SUKSvfNCcVkaGz4JzmRA07XIuwHyHluTLw6B5kwFXXBwoD1m7qQANU8vCDN-fApqRwMIOHbERM8XJeASti-loKKhWDCWTueGPDde-h_In9C_DHbmzdnTxo29Q4_DneNT-dfDpq_jr9Y0OetRrXkpCZSLmeF7G1SxkpgHzsQtJ4j4qn9UPm1Eu9lPVgjJV1Z2ahP71vKzr8SzLBveEKHScVu_qT6uXCUJqq-_B0i9LMqYIVisP4iQNipHuq9c5XcBvBGt2gtOwBtApA5FL4cPKsRT-n9RikR35rpDqS4Wm2MRStZurY6XvMm96ruugoW3F07-R3WRUmxjAEj3ydWC7ecqV3etXWY1DBOJOBvjUuS2ZKY7mL1lFazDTe52Ms1QjvA8aQAwwe2YpXK0TiD--zVLLSjMreh0VC_JdeHEJ5Z2bR9VP9sQEa1AoXME7hCqKyVzq_HQegyJo04xqaLQ1_xJlKw=w929-h425-no?authuser=0)
 
-Part 3 of the project focuses on **Classification Modeling**.  Given that project 2 was a regression focused problem, we needed to give you a classification focused problem to practice the various models, means of assessment and preprocessing associated with classification.   
+
+**Sentiment Analysis of Two Subreddits**
+![enter image description here](https://lh3.googleusercontent.com/-OdTLeOfrhQKstw7K4qLFkWUzr_HFtk_LA1wexcY189OuqtJkbj0PKZShK0IcZUlUD5AruLrQe2aKgjIESz2mJ6rXpR93efNudDUxDS4d8OeoOikt0sj9pR0Dvk_eE7qXA1Onyh-PY34KrO0fBL-0iWJv2AVa_l8jhfmWEO6zk2le1CbMWC5_AsTbeistXEi-mJRbfnLRIK6l9qghhAkm6BV5i3lnkklMz7GdV7IlQO5_V6v_-UDn0QGv8yrEWS3Ox-ZRDhDsZOdo9TGW20Jh5JGQGBjVd6XufqtbFugPJriOfH14DHpboB1Ro0wyEokDdyB7km-OibL0vFibzu9WUjJtTPS3SGgV6dHEIku8WxayOOt22QlCaVsPYLrMAFZ0tWnWkEJ_dtBiGaHCevcsOtS47ryf3lxPZzO7MjqFOEP6SFdbh7K184rIAVXtaSp1rRRqS7lB_EhreFuqJAxYHSMPnQ32docGy2_FMVEZ6AsJSy9x1U-kseBFGdaE_uIoOe4qXb-H8hn2yeWKlbAwu8Lteh8pSapjbg7e3tQ1STjsPGFSEWDSlk9erqvzjenmlh4F6oRg8uL-9REd5pl7cUx2J8lLwx7XU4xVRCXAuGtRGmWPgqR5E7JoOc8BC4DSppk4hNCer_w59xzh1SD_ozw0TjhdvKqgH14hN--ny49zMJWFUpY-EtH2C337Q=w1379-h285-no?authuser=0)
+
+
+## Conclusion/Recommendations
+
+ - Logistic regression and Random Forest performed relatively well for the train set, but significantly underperform for the test set, implying the model is highly overfitted
+ - CountVectorizer/logistic regression combination model has the highest prediction rate
+
+
+![summary of train/test score of transformer/estimater combination](https://lh3.googleusercontent.com/giv8YoVBf6GInIngxzPZOCIb1lfQ0v5RGjYeFHvZIZf6lamU3xqFUlA3G1xVeO1HjEITrLKtjDEneXXtwLqRTspwc_KuLe559NvsnHsQ5sSIFM97k_M3qzPJ_fqCRWn3FEC3WPzNGKBjmOn4kr5tIXmDTWaleLWiIRYiz4lOwYxR2uFyrPx-M6oTtnRbYy-WIc8aS_jQPeH5mom6kKWc_fp-04QfyTh7f1rqMVxZNynJzBfmLbH59-m5p8ubT_QCVejEGKSSj8PES6mALjp7CS3RTrsXNZad92_0cf2nVrbil-nV0-TVEUVpH7lRZovPJ3JKtGvFvpo9lCrj4WcRJH-zOmL6Gv6LmWBpmfY1lP6u14h8egj1xaE1b4KUT95gMQkJnLfBS_TNxnl9VBv6KEYpvkbGRSRioc3CIoiDw-7nzZiaiNEFluP7myPd9cfPF3DIEXgP1b1LWoqoPB0IxuQ-Hz5_ljWK9FMTFX79wjnPnsKmAOdtU9VZzZPihI3fRYNqlOPhvqNcOdfZ8EMXQfXpLYijpLgcIa4odAVFI2PRA2LKeywOosNm0r51p2djVY1NW8w8ajcOU9OevvV4inaNlRgVFAOWMgJEFy1n69SMQxmn9hqW7g_7GR_xXgStwlJU1xloJ7x1ljIkapX-WLd3eP6dPb7r9b2Guuo-Ux16HqbFdsfOZCiUwNHBsw=w1035-h510-no?authuser=0)
+
+ - Overall performance is around 80-85% for all the models. Although the prediction rate is higher than expected, there is no single superior model to be implemented
+ - Cvec/Logreg model provides some insights on most impactful words for predicting whether the post is from Uplifting News or NottheOnion
+
+ - ![enter image description here](https://lh3.googleusercontent.com/ffi35Tmma7stplYh5OmVIp5iCJHM87DxbHhpXh9ynZg6HjWAnQ0o19kzSYolQ2U4xP5ZlNDvppDsMH5rkOVvKJmzpZnz2zdELZV8Fs-FzlFBzu7R4f7BdcB31cCUdsY3p1NCpGs8UPG92EGYCa7LRfYKyL712omwTCK-QKQo7jWCdRdHywxwSR1gZJhQDVuSbLx-EIjNEnKKS3yEbyQiwkoth-lw_9_Tw5RkdfINw2ubkq_VtS1ONekpm8WQ3TF_BFWW9nkOML8059TJ32-PvYe_0OSgOEYhiPR_3Rx-Mo925Cf1vAo9w2OD4_oUu4PFZrPEAGo4OA8wqGyj2R9I6jX5tWQJhWCn6iwOknCp9zMtVM-Zu8NHkcijZMW_Lhjg_7emmPf_vRlGMwTQgQ53KpCsen1kVu7ZYTOKzcQX2algnnfbJaKnKA5Adf2CJ-nJHmf-N9IWP8Xwhy-BgarqQPeTb5CiZ5PaT3XYzkfUeGY03ewi5T7EV7Tqgv1QJSNu8tjFSA1sYaaIdHnWosSjI_dlbs0XAsU_gocb5AXbUbxyFdq1jDTVU_imwH1ZTI9EzK73Q_UH-Wo_BtcLZV_MKiFQMICM2kJT_Yc-9mOd_5nNSdgXJjclTan-0oJ4aiigvWp-_EyDeO8zr2KK0Wc2Gl7I0di8pjaGrSl0rwgqFdRU6HwkOkDE6MIvi_CIPA=w212-h422-no?authuser=0)![enter image description here](https://lh3.googleusercontent.com/G9HQ-kqVcVMJT45hUp_-3qKqA6oArG1gJDEC2Yr57H4EMxiI4q5lMskPtUk_D_UVA4NzwD90B0XrK2437UtXxGWJCkLJoJsZb0VpNy0yjfMX4Q2VM2Nc0DQSIuTD8ftc8W3qUlBFOZnC9M3frDj1g1kdkhFrn8KhcQ7mRnveAlATuXcvlrCp74yBABwKOE1SlTByI7IO_mU4qQL4DeeYCNsqwAsJVjm0hc1B1VZ48WqlAPzBDW0k-zE7WZxmUz18uEcErkUqtAi3hx7BE1zKVbkGjpCP27cx2g4CAuIFAQnbsawEh__FBdtmPVPzb2zuYIwa36yas_eO--Mk0nTIZPAEnGGs791LxHE6s6yYtmekJg2XjgKMzMpYsHq-HR5ILbfXQK5hQZYgTMZ9u30CL5QvXPe6JPS_aC8586gmQpWdyOBz7OuPF0ZHTqcTqRwj9MaFDtak-6fOr1pD-ipTgB6Uvd-UKLCFmm3m5pOuPHmDDdJWyrwBcm_trDRenss6bcZ5I8II9Aka5uniflCcg6kygQwoSTA7P5KRDdUgVRlUxb6JZxImIZfytj3YDFxckcOLS0RFSuTF7TQpfdzTL7RGPqa8JmsFQgqlsKNVQCovWVJ-pQ8ZY5R0k4hFNxVzkCIPQhz_5gFkmm3qJv_g8EelwXItYuwm6qxZkXA1jBMOitbyLGi03RyMsUix3A=w210-h422-no?authuser=0)
+ - Due to the highly complex nature of language, there is no single equation that can generate titles that would produce high CTR. However, the analysis reveals some insights on how to target length, words, and sentiment of titles
+ - More sophisticated analysis using additional measures is needed to sense subtle nuanced tones and sarcasm.
